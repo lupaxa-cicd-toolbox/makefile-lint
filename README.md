@@ -4,7 +4,7 @@
     </a>
 </p>
 
-<h1 align="center">makefile-lint</h1>
+<h1 align="center">Makefile Lint</h1>
 
 ## Overview
 
@@ -70,6 +70,7 @@ The following environment variables customise the script:
 | `SHOW_UNMATCHED` | `false`        | Show files that matched neither pattern            |
 | `SCAN_ROOT`      | script default | Override scan directory without editing the script |
 
+> [!NOTE]
 > If you set `INCLUDE_FILES`, only matching paths are scanned (everything else is skipped, including paths that would match `EXCLUDE_FILES`).
 
 You can combine any of the settings above:
@@ -98,8 +99,6 @@ jobs:
 
 ## Example Output
 
-Example shape of a successful run (details vary by tool version):
-
 ```text
 --------------------------------------------------------------------- Stage 1: Parameters --
  No parameters given
@@ -119,6 +118,9 @@ Files are identified by name:
 ```shell
 [[ ${filename} =~ (Makefile|makefile|GNUmakefile)($|\.)|\.(mk|make)$ ]]
 ```
+
+> [!NOTE]
+> There is not magic type for Makefiles so file -b is of not use for identifying the files.
 
 <a href="https://github.com/the-lupaxa-project">
     <img src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/components/footer-for-child-orgs.svg" alt="The Lupaxa Project Footer" width="100%" />
